@@ -1,0 +1,15 @@
+- hosts: all
+  
+  tasks:
+  - name: install python-minimal
+    apt:
+      name: python-minimal
+      state: present
+
+- hosts: wordpress
+
+  roles:
+    - server
+    - php
+    - mysql
+    - wordpress
